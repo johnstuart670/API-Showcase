@@ -19,6 +19,7 @@
 
 </head>
 <body>
+	<div class="container">
 	<header>
 <h1>GIPHY API EXAMPLE</h1>
 	<p>Here is an example of buttons that work via the GIPHY API.  You can add your own buttons to the list to see what else is out there!</p>
@@ -33,11 +34,13 @@
 			<div class="row">
 				<!-- contains the search function -->
 				<div class="col-md-4">
-			<form action = "input">
-<label for"user-selection">Add Your Own Gifs:</label>
-<input type="text" class="form-control" id = "userSelection" type = "text">
-<button class="btn" id="submitUserInfo">SUBMIT</button>
+						<form action="input" class = "form-inline">
+								<label for="user-input">Search for your own GIFs Here:</label>
+								<input class="form-control" id="userSelection" type="text">
+								<input class="btn btn-primary" id="submitUserInfo" type="submit" value="Submit">
+							</form>
 				</form>
+
 			</div>
 			<div class="col-md-8">
 				<h3>Gifs!</h3>
@@ -49,6 +52,7 @@
 			</div>
 		</div>
 	</section>
+</div>
 	<!-- Link to the local JS -->
 	<script src="assets/javascript/app.js"></script>
 </body>
