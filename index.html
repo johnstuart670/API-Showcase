@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Giphy API Exercise</title>
+
+<!-- LInk to bootstrap CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- Link to Google Fonts and Personal CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Link to Jquery -->
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<header>
+<h1>GIPHY API EXAMPLE</h1>
+	<p>Here is an example of buttons that work via the GIPHY API.  You can add your own buttons to the list to see what else is out there!</p>
+	<p>These are all from my favourite Reality TV shows, but you can search for basically anything!</p>
+	<p>Most of these items should have a g or PG rating so nothing gross pls.</p>
+	</header>
+
+	<section>
+		<div class="container-fluid">
+			<div class="row" id = "pushButtons">
+			</div>
+			<div class="row">
+				<!-- contains the search function -->
+				<div class="col-md-4">
+			<form action = "input">
+<label for"user-selection">Add Your Own Gifs:</label>
+<input type="text" class="form-control" id = "userSelection" type = "text">
+<button class="btn" id="submitUserInfo">SUBMIT</button>
+				</form>
+			</div>
+			<div class="col-md-8">
+				<h3>Gifs!</h3>
+			</div>
+			<!-- ends the row  -->
+			<div class="row" id = "pushGifs"></div>
+			</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- Link to the local JS -->
+	<script src="assets/javascript/app.js"></script>
+</body>
+</html>
