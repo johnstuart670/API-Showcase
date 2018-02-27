@@ -3,11 +3,11 @@ var  buttonArr = ["Survivor", "The Bachelor", "The Bachelorette", "America's Nex
 
 
 var userChoice;
-var tempVariable;
 var pushButtons = $("#pushButtons");
 var submit = $("#submitUserInfo");
 var userSelection = $("#userSelection");
-var gifButton = $(".gifButton");
+var GIPHYAPI = "&api_key=DOdaYWsvIcH6mZayHPSrZ7OHHpVrnMWq";
+var pushGifs = $("#pushGifs")
 
 // main function for making buttons
 function singleButton(event){
@@ -21,7 +21,7 @@ button
 // give the variable the data attribute of "ID" but with the passed value of event
 .attr("ID", event)
 // give the button a class of gifButton so we can call all of them later
-.addClass("gifButton")
+.addClass("gifBtn")
 // append to the pushButtons area.
 pushButtons.append(button);
 };
@@ -51,6 +51,63 @@ singleButton(userChoice);
 userSelection.val("");
 });
 
+// event listener for gifButton
+$(".gifBtn").on("click", function(){
+	// empty the gifs to make room for more
+	pushGifs.empty();
+	// set a variable from the ID to make it easy to search
+	var search = $(this).attr("id");
+	console.log(search)
+	// set a variable to check the JSON object easily
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + GIPHYAPI+ "&limit=10&rating=G&lang=en";
+// use the Jquery AJAX function
+	$.ajax({
+		url: queryURL,
+		method: "GET"
+	}).then(function(object){
+ var searchResults = object.data;	
+	// for loop to go through all ten items;
+		for (var i = 0; i < searchResults.length; i++ ){
+var img = $("<img>");
+var srcStill = searchResults[i].images.fixed_height_still.url;
+var src = searchResults[i].images.fixed_height.url;
+
+// Give the image some stuff:
+img
+.addClass("imgClass")
+.attr("srcStill", srcStill)
+.attr("srcMoving", src)
+.attr("motion", "still")
+.attr("src", srcStill);
+
+pushGifs.append(img);
+
+		}
+// end of for loop
+	});
+// end of the gifButton Function
+});
 
 
+// on click of the imgClass
+
+$("body").on("click", 'img', function(){
+	// cleanup variable
+	var motion =  $(this).attr("motion");
+	console.log(motion);
+	// if it is still
+if (motion === "still"){
+// change the data-motion attribute to moving
+	$(this).attr("motion", "moving")
+	// update the image src attribute to srcMoving
+	.attr("src", ($(this).attr('srcmoving')));
+}else {
+	// change the data-motion attribute to still
+	$(this).attr("motion", "still");
+	// update the image src attribute to srcStill
+	$(this).attr("src", ($(this).attr('srcstill')))
+}
+});
+
+// end of onload function
 });
