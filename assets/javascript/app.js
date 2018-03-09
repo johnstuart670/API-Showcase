@@ -52,7 +52,7 @@ userSelection.val("");
 });
 
 // event listener for gifButton
-$(".gifBtn").on("click", function(){
+$(document).on("click", ".gifBtn", function(){
 	// empty the gifs to make room for more
 	pushGifs.empty();
 	// set a variable from the ID to make it easy to search
