@@ -1,0 +1,21 @@
+.imgClass, .gifBtn {
+    max-width: 30%;
+    padding: 2.5px 5px 7.5px 5px ;
+    max-height: 150px;
+}
+
+#pushGifs {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+};
+
+#pushButtons {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

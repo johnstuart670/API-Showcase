@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Giphy API Exercise</title>
 
-<!-- LInk to bootstrap CDN -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- Link to Google Fonts and Personal CSS -->
-<link rel="stylesheet" href="assets/css/style.css">
+	<!-- LInk to bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
 
-<!-- Link to Jquery -->
-<script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
+	<!-- Link to Google Fonts and Personal CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- Link to Jquery -->
+	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 
 </head>
-<body>
-	<div class="container">
-	<header>
-<h1>GIPHY API EXAMPLE</h1>
-	<p>Here is an example of buttons that work via the GIPHY API.  You can add your own buttons to the list to see what else is out there!</p>
-	<p>These are all from my favourite Reality TV shows, but you can search for basically anything!</p>
-	<p>Most of these items should have a g or PG rating so nothing gross pls.</p>
-	</header>
 
-	<section>
-		<div class="container-fluid">
-			<div class="row" id = "pushButtons">
+<body>
+	<div class="container mx-auto py-3">
+		<header class="mx-auto">
+			<div class="row mx-auto">
+				<h1 class="px-auto text-center">GIPHY API EXAMPLE</h1>
 			</div>
-			<div class="row">
-				<!-- contains the search function -->
-				<div class="col-md-12">
-						<form action="input" class = "form-inline">
-								<label for="user-input">Search for your own GIFs Here:</label>
-								<input class="form-control" id="userSelection" type="text">
-								<input class="btn btn-primary" id="submitUserInfo" type="submit" value="Submit">
-							</form>
-				</form>
+			<p class="text-center">Here is an example of buttons that work via the GIPHY API. You can add your own buttons to the list to see what else is
+				out there. These are all from my favourite Reality TV shows, but you can search for basically anything.</p>
+			<p class="text-center">The gifs will be still on their load to the page. Click on the image to start it in motion (or stop it once it's moving).</p>
+		</header>
+
+		<section>
+			<div class="container-fluid">
+				<div class="row" id="pushButtons">
+				</div>
+				<br>
+				<div class="row">
+					<!-- contains the search function -->
+					<div class="col-12 ">
+						<form action="input" class="form-inline text-center">
+							<div class="col-1"></div>
+							<label for="user-input " class="col-3">Search for your own GIFs Here:</label>
+							<input class="form-control col-9" id="userSelection" type="text">
+							<input class="btn btn-warning col-3" id="submitUserInfo" type="submit" value="Submit">
+							<div class="col-1"></div>
+						</form>
+						</form>
+					</div>
+					<div class="col-md-12 h3">
+						<h3 class = "text-center">GIFS WILL RENDER BELOW:</h3>
+					</div>
+				</div>
 			</div>
-			<div class="col-md-12 h3">
-				<h3>Gifs!</h3>
-			</div>
-		</div>
 			<!-- ends the row  -->
-			<div class="container" id = "pushGifs">
+			<div class="row container mx-auto" id="pushGifs">
 			</div>
-		</div>
-			</div>
-		</div>
+	</div>
+	</div>
+	</div>
 	</div>
 	</section>
 
 
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
 	<!-- Link to the local JS -->
 	<script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
